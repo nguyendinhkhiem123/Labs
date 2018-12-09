@@ -1,1 +1,101 @@
+//LAB3-B1
+#include<iostream >
+using namespace std;
 
+class Time
+{
+	private :
+		int gio;
+		int phut;
+		int giay;
+	public :
+		Time(int a,int b,int c)
+		{
+			gio=a;
+			phut=b;
+			giay=c;
+		}
+			void Xuat()
+		{
+			cout<<gio<<":"<<phut<<":"<<giay;
+		}
+};
+int main()
+{
+	Time t(2,3,4);
+	t.Xuat();
+	return  0;
+}
+//LAB3-B2
+#include<iostream>
+using namespace std;
+
+class employee
+{
+	private :
+	int id;
+	int year;
+	float money;
+	public :
+	void Input();
+	void Tinh();
+};
+void employee::Input()
+{
+	cout<<"\nNhap ma nhan vien : ";
+	cin>>id;
+	cout<<"\nNhap so nam lam :";
+	cin>>year;
+	cout<<"\nNhap khoang boi thuong :";
+	cin>>money;
+}
+void employee::Tinh()
+{
+	float Tong=money;
+	for(int i=1;i<=year;i++)
+		Tong=Tong+Tong*0.055;
+	cout<<"\nKhoang boi thuong sau "<<year<<" nam la :"<<Tong<<endl;
+	
+}
+int main()
+{
+	employee e;
+	e.Input();
+	e.Tinh();
+	return 0;
+}
+//LAB3-B3
+#include<iostream>
+using namespace std;
+class serial
+{
+	private :
+	static int number;
+	int id;
+	public :
+		serial()
+		{
+			number++;
+			id=number;
+		}
+		void SoLanTao()
+		{
+			cout<<"\nMA SO : "<<number<<endl;
+		}
+		void in()
+		{
+			cout<<"\nDOI TUONG THU :"<<id<<endl;
+		}
+};
+int serial::number=0;
+int main()
+{
+	serial s;
+	s.in();
+	s.SoLanTao();
+	serial s1;
+	s1.in();
+	s1.SoLanTao();
+	return 0;
+	
+}
