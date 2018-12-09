@@ -13,3 +13,207 @@ int main()
 	cout<<" *   * *   *  * * *   * * *   *         *      ";
 	return 0;
 }
+//LAB2-B1
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <time.h>
+using namespace std;
+
+struct sdt
+{
+	double mavung;
+	double traodoi;
+	double so;
+};
+
+int main()
+{
+	 sdt t;
+	 sdt k;
+	srand (time(NULL));
+	t.mavung = rand() % 1000+111;
+	t.traodoi = rand() % 1000+111;
+	t.so = rand() % 10000+1111;
+	cout<<"nhap vao ma vung, trao doi va so cua ban: ";
+	cout<<"\nvi du: 347 235 7894";
+	cout<<endl;
+	cout<<"ma vung: ";
+	cin>>k.mavung;
+	cout<<"\ntrao doi: ";
+	cin>>k.traodoi;
+	cout<<"\nso cua ban: ";
+	cin>>k.so;
+	cout<<"\n\nban da nhap xong";
+	cout<<"\nso cua toi la:";
+	cout<<" ("<<t.mavung<<")"<<" "<<t.traodoi<<" "<<t.so;
+	cout<<"\nso cua ban la: ";
+	cout<<"("<<k.mavung<<") "<<k.traodoi<<" "<<k.so;
+	return 0;
+}
+//LAB2-B2
+#include<iostream>
+using namespace std;
+double Tong(double a,double b,double c);
+
+void Nhap(float &n);
+int main()
+{
+	double a,b,c;
+	cout<<" Enter number of years: :";
+	cin>>a;
+	cout<<" Enter initial amount:";
+	cin>>b;
+	cout<<" Enter interest rate :";
+	cin>>c;
+	cout<<"At the end of "<<a<< "years, you will have "<<Tong(a,b,c);
+	return 0;
+}         
+
+ double Tong(double a,double b,double c) 
+ {
+ 	double tong=b;
+ 	for(int i=1;i<=a;i++)
+ 	{
+ 		 tong=tong+tong*c;
+ 	}
+ 	return tong;
+ }
+ //LAB2-B3
+ #include<iostream>
+#include<string.h>
+using namespace std;
+void Nhap(float &a,char &s,float &b);
+void BaiToan(float a,char s,float b,char K);
+int main()
+{
+	
+	char s,K;
+	float a,b ;
+	BaiToan(a,s,b,K);
+	return 0;
+}
+
+void Nhap(float &a,char &s,float &b)
+{
+	cout<<" Enter Numer ,operator : " ;
+	cin>>a>>s>>b;
+
+}
+
+void BaiToan(float a,char s,float b,char K)
+{
+	float T =0;
+	x:
+	Nhap(a,s,b);
+	switch (s)
+	{
+		case '+':
+			{
+				T=a+b;
+				cout<<"Tong la : "<<T<<endl;
+				break;
+			}
+		case '-':
+			{
+				T=a-b;
+				cout<<"Hieu la : "<<T<<endl;
+				break;
+			}
+		case '*':
+			{
+				T=a*b;
+				cout<<"Tich la : "<<T<<endl;
+				break;
+			}
+		case '/':
+			{
+				T=a/b;
+				cout<<" Hieu la " <<T<<endl;
+				break;
+			}
+		default :
+			{
+				cout<<"Khong Phu hop "<<endl;
+			}
+			
+	}
+	cout<<" Yes or No ";	
+	cin>>K;
+	if(K=='y')
+	{
+		goto x;
+	}
+	else if(K=='n')
+	{
+		cout<<" The End";
+	}
+	
+}//LAB3-B4
+#include<iostream>
+using namespace std;
+void Nhap(int &a,int &b,int &c,int &d,char &s);
+void Tinh(int a,int b,int c,int d,char s,char k);
+int main()
+{
+	char s,k;
+	int a,b,c,d;
+	Tinh(a,b,c,d,s,k);
+	return 0;
+}
+void Nhap(int &a,int &b,int &c,int &d,char &s)
+{
+	char dummy;
+	cout<<"Enter Number 1,2,operator,3,4 :" ;
+	cin>>a>>dummy>>b>>s>>c>>dummy>>d;
+
+}
+void Tinh(int a,int b,int c,int d,char s,char k)
+{
+	float Tong =0;
+	x:
+	Nhap(a,b,c,d,s);
+	switch (s)
+	{
+		case '+':
+			{
+				Tong =1.0*a/b+1.0*c/d;
+				cout<<Tong<<endl ;
+				break;
+			}
+		case '-':
+			{
+				Tong=1.0*a/b-1.0*c/d;
+				cout<<Tong<<endl;
+				break;
+			}
+		case '*':
+			{
+				Tong= 1.0*a/b*c/d;
+				cout<<Tong<<endl;
+				break;
+			}
+		case '/':
+			{
+				Tong=1.0*a/b/c/d;
+				cout<<Tong;
+				break;
+			}
+		default	:
+			{	
+			cout<<"Khong Phu hop";
+			break;
+			}
+		}	
+	cout<<" Do You (yes or no) ";                                      
+	cin>>k;
+	if(k=='y')
+	{
+		goto x;	
+	}
+	else
+	{
+		cout<<"The End";
+	
+	}
+}
