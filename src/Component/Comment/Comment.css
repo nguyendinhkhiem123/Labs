@@ -1,0 +1,35 @@
+.comment{
+    display: flex;
+    align-items: flex-start;
+}
+
+.comment__avatar{
+    margin-right: 24px;
+}
+
+.comment__body{
+    flex: 1;
+    padding: 4px;
+}
+
+.comment__name{
+    font-size: 14px;
+    color : rgb(83, 83, 83);
+    padding-right: 8px;
+}
+.comment__hour{
+    font-size: 14px;
+    color: rgb(190, 190, 190)
+    ;
+}
+
+.comment__content{
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.comment__footer{
+    font-size: 14px;
+    color : rgb(83, 83, 83);
+    ;
+}
